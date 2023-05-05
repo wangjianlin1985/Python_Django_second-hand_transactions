@@ -1,0 +1,27 @@
+{% load staticfiles %}
+{% include 'check_logstate.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/priceRegion.css' %}" />
+<div id="priceRegion_EditDiv">
+	<form id="priceRegionModifyForm" enctype="multipart/form-data"  method="post">
+        {% csrf_token %}
+		<div>
+			<span class="label">区间id:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="priceRegion_regionId_modify" name="priceRegion.regionId" value="{{ regionId }}" style="width:200px" />
+			</span>
+		</div>
+
+		<div>
+			<span class="label">区间名称:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="priceRegion_regionName_modify" name="priceRegion.regionName" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="priceRegionModifyButton" class="easyui-linkbutton">更新</a> 
+		</div>
+	</form>
+</div>
+<script src="{% static 'js/PriceRegion/priceRegion_modify.js' %}"></script>

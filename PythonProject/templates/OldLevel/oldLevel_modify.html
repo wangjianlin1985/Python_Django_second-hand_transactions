@@ -1,0 +1,27 @@
+{% load staticfiles %}
+{% include 'check_logstate.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/oldLevel.css' %}" />
+<div id="oldLevel_EditDiv">
+	<form id="oldLevelModifyForm" enctype="multipart/form-data"  method="post">
+        {% csrf_token %}
+		<div>
+			<span class="label">新旧程度id:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="oldLevel_levelId_modify" name="oldLevel.levelId" value="{{ levelId }}" style="width:200px" />
+			</span>
+		</div>
+
+		<div>
+			<span class="label">新旧程度名称:</span>
+			<span class="inputControl">
+				<input class="textbox" type="text" id="oldLevel_levelName_modify" name="oldLevel.levelName" style="width:200px" />
+
+			</span>
+
+		</div>
+		<div class="operation">
+			<a id="oldLevelModifyButton" class="easyui-linkbutton">更新</a> 
+		</div>
+	</form>
+</div>
+<script src="{% static 'js/OldLevel/oldLevel_modify.js' %}"></script>
